@@ -1,8 +1,7 @@
-//该文件包含创建图函数 
-
+//该文件包含创建图函数
 #include "Dijkstra_head.h"
 
-//创建图 
+//创建图
 void Graph::Create_graph(int vernum, int edge)
 {
     this->vernum = vernum;                    //初始化顶点数和边数
@@ -26,5 +25,10 @@ void Graph::Create_graph(int vernum, int edge)
         adjmatrix[start - 1][end - 1] = value;//对邻接矩阵对应上的点赋值
         adjmatrix[end - 1][start - 1] = value;
         count++;
+    }
+
+    for (int i = 0; i < this->vernum; i++)    //初始化node数组的路由器编号router 
+	{
+        node[i].router = "r" + to_string(i + 1);
     }
 }

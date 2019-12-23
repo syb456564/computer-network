@@ -1,30 +1,47 @@
 //文件包含添加边、顶点函数 
-
 #include "Dijkstra_head.h"
 
 //添加边
 void Graph::Add_edge()
 {
-	int from, to, value;
+	string from, to;
+	int f, t, value;
 	cout << "请输入您要添加的边（格式：起点 终点 权值）";
 	cin >> from >> to >> value;
-	adjmatrix[from - 1][to - 1] = value;//对邻接矩阵对应上的点赋值
-    adjmatrix[to - 1][from - 1] = value;
+	for (f = 0; f < this->vernum; f++)    //找到起点对应的数组坐标 
+	{
+		if (from.compare(node[f].router) == 0)
+		    break;
+    }
+    for (t = 0; t < this->vernum; t++)    //找到终点对应的数组坐标 
+	{
+		if (to.compare(node[t].router) == 0)
+			break;
+	}
+	adjmatrix[f][t] = value;              //对邻接矩阵对应上的点赋值
+    adjmatrix[t][f] = value;
     this->edge++;
 }
 
 //添加顶点
 void Graph::Add_vertex()
 {
-    int i, e, to, value;
-	cout<<"请输入与添加的顶点r"<<this->vernum+1<<"相邻的边数"<<endl;
+    int i, j, e, value;
+    string from, to;
+	cout << "请输入与添加的路由器相邻的边数：";
 	cin >> e;
-	cout<<"请依次输入每条边及其权值（格式：终点 权值）"<<endl; 
+	cout << "请依次输入每条边及其权值（格式：起点 终点 权值）" << endl;
 	for(i = 0; i < e; i++)
 	{
-		cin >> to >> value;
-		adjmatrix[this->vernum][to-1] = value;
-		adjmatrix[to-1][this->vernum] = value;
+		cin >> from >> to >> value;
+		for (j = 0; j < this->vernum; j++)//找到终点对应的数组坐标 
+	    {
+		    if (to.compare(node[j].router) == 0)
+		    	break;
+	    }
+		adjmatrix[this->vernum][j] = value;
+		adjmatrix[j][this->vernum] = value;
+		node[this->vernum].router = from;
 	}
 	this->vernum++;
 	this->edge = this->edge + e;
