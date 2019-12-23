@@ -18,8 +18,8 @@ void Graph::Display_table(string from)
 	{
 		for (i = 0; i < this->vernum; i++)
 	    {
-			cout << "目的地：" << node[i].path[node[i].path.length()-1] << "  ";
-			cout << "下一跳：" << node[i].path[6] << "  ";
+			cout << "目的地：r" << node[i].path[node[i].path.length()-1] << "  ";
+			cout << "下一跳：r" << node[i].path[6] << "  ";
             cout << "权值：" << node[i].value << endl;
         }
 	}
