@@ -4,26 +4,16 @@
 //主函数
 int main(void)
 {
-    int vernum,edge;
-    Graph graph;
-    cout << "请输入拓扑的路由器个数和边条数：" << endl;
-    cin >> vernum >> edge;
-    while (! graph.Check(vernum, edge))
-	{
-        cout << "输入不合法！请重新输入！" << endl;
-        cin >> vernum >> edge;
-    }
-    graph.Create_graph(vernum, edge);
-    system("pause");      //按任意键继续...
-
+	Graph graph;
+    graph.Create_graph();
     first:
     switch(graph.Menu())
     {
     	case 1:
     	{
-    		system("cls");//清除屏幕
+    		system("cls");  //清除屏幕
 			graph.Dijkstra();
-			system("pause");
+			system("pause");//按任意键继续 
 			goto first;
 		}
 		case 2:

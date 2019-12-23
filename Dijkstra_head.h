@@ -1,8 +1,9 @@
 //文件包含记录起点到每个顶点的最短路径的信息结构体以及图类
 #ifndef DIJKSTRA_HEAD_H_
 #define DIJKSTRA_HEAD_H_
-#include<string>
-#include<iostream>
+#include <string>
+#include <fstream>
+#include <iostream>
 #define MAX_VERNUM 20//最大顶点数
 #define MAX_VALUE 999//最大权值
 using namespace std;
@@ -22,9 +23,8 @@ class Graph
 {
 public:
     Graph(){}                               //构造函数
-    ~Graph();                               //析构函数
-    bool Check(int Vexnum, int edge);       //检查输入的边数与顶点的关系是否合理 
-    void Create_graph(int vernum, int edge);//创建图
+    ~Graph();                               //析构函数 
+    void Create_graph();                    //创建图
     void Dijkstra();                        //迪斯拉算法主体求最短路径
     void Display_table(string from);        //输出路由表 
     void Add_edge();                        //添加边

@@ -34,7 +34,7 @@ void Graph::Add_vertex()
 	for(i = 0; i < e; i++)
 	{
 		cin >> from >> to >> value;
-		for (j = 0; j < this->vernum; j++)//找到终点对应的数组坐标 
+		for (j = 0; j < this->vernum; j++)//找到终点对应的数组坐标
 	    {
 		    if (to.compare(node[j].router) == 0)
 		    	break;

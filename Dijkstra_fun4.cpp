@@ -19,12 +19,3 @@ int Graph::Menu()
 		}while(i<1||i>6);
 	return i;
 }
-
-//检验输入边数和顶点数的值是否合法，((Vexnum*(Vexnum - 1)) / 2) < edge
-bool Graph::Check(int Vexnum, int edge)
-{
-    if (Vexnum <= 0 || edge <= 0 || ((Vexnum*(Vexnum - 1)) / 2) < edge)
-        return false;
-    else
-        return true;
-}
