@@ -6,7 +6,6 @@ void Graph::Del_edge()
 {
 	string from, to;
 	int r, i, j;
-	cout << "朱和章" << endl;
 	cout << "请输入您要删除的边（格式：起点 终点）";
 	cin >> from >> to;
 	for (i = 0; i < this->vernum; i++)
