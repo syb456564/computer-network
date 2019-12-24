@@ -13,9 +13,11 @@ struct Node
 {
     string path;                            //路径
     string router;                          //路由器编号
+    string next_router;
+	string des_router; 
     int value;                              //路径权值
     bool visit;                             //是否访问过
-    Node(){visit = false; value = 0; router = ""; path = "";}
+    Node(){visit = false; value = 0; des_router = ""; router = ""; next_router = ""; path = "";}
 };                                          //构造函数：初始化
 
 //图类

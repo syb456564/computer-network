@@ -18,8 +18,11 @@ void Graph::Display_table(string from)
 	{
 		for (i = 0; i < this->vernum; i++)
 	    {
-			cout << "目的地：r" << node[i].path[node[i].path.length()-1] << "  ";
-			cout << "下一跳：r" << node[i].path[6] << "  ";
+			cout << "目的地：" << node[i].des_router << "  ";
+			if (node[i].next_router[2] >= '0' && node[i].next_router[2] <='9')
+			    cout << "下一跳：r" << node[i].next_router[1] << node[i].next_router[2] << "  ";
+			else
+			    cout << "下一跳：r" << node[i].next_router[1] << "  ";
             cout << "权值：" << node[i].value << endl;
         }
 	}
@@ -29,7 +32,7 @@ void Graph::Display_table(string from)
 //析构函数
 Graph::~Graph()
 {
-    delete[] node;                      //释放一维数组node内存 
+    delete[] node;                      //释放一维数组node内存
     for (int i = 0; i < MAX_VERNUM; i++)//释放二维数组adjmatrix内存
 	{
         delete this->adjmatrix[i];
