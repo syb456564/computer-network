@@ -4,6 +4,7 @@
 //输出路由表 
 void Graph::Display_table(string from)
 {
+	cout << "孙钰博" << endl;
 	int i;
 	bool flag = false;
     cout << "路由器" << from << "的路由表如下：" << endl;
