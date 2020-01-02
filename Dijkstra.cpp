@@ -1,7 +1,7 @@
 //文件包含算法主体函数，利用迪杰斯拉算法计算最短路径 
 
 #include "Dijkstra_head.h"
-//算法主体
+//算法主体更改
 void Graph::Dijkstra()
 {
     int f, i, j, k;
