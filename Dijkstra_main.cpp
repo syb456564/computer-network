@@ -5,7 +5,7 @@
 int main(void)
 {
 	Graph graph;
-    graph.Create_graph();
+    graph.Create_graph();      //´´½¨Í¼º¯Êý
     first:
     switch(graph.Menu())
     {
