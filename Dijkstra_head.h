@@ -11,13 +11,12 @@ using namespace std;
 //记录起点到每个顶点的最短路径的信息
 struct Node
 {
-    string path;                            //路径
     string router;                          //路由器编号
-    string next_router;
-	string des_router; 
+    string next_router;                     //下一跳
+	string des_router;                      //目的路由
     int value;                              //路径权值
     bool visit;                             //是否访问过
-    Node(){visit = false; value = 0; des_router = ""; router = ""; next_router = ""; path = "";}
+    Node(){visit = false; value = 0; des_router = ""; router = ""; next_router = "";}
 };                                          //构造函数：初始化
 
 //图类

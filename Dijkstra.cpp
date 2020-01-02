@@ -16,7 +16,6 @@ void Graph::Dijkstra()
 	}
     for (i = 0; i < this->vernum; i++)//初始化node数组
 	{
-        node[i].path = from + "-->" + node[i].router;
         node[i].next_router = node[i].router;
         node[i].des_router = node[i].router;
         node[i].value = adjmatrix[f][i];
@@ -42,7 +41,6 @@ void Graph::Dijkstra()
 		{
             if (!node[k].visit && adjmatrix[temp][k] != MAX_VALUE && (node[temp].value + adjmatrix[temp][k]) < node[k].value)
 			{//如果新得到的边可以影响其他为访问的顶点，则更新它的最短路径和长度
-                node[k].path = node[temp].path + "-->" + node[k].router;
                 node[k].des_router = node[k].router;
                 node[k].next_router = node[temp].next_router + node[k].router;
                 node[k].value = node[temp].value + adjmatrix[temp][k];
