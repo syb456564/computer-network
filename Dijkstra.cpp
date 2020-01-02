@@ -22,14 +22,14 @@ void Graph::Dijkstra()
         node[i].visit = false;
     }
     node[f].value = 0;          //设置起点的到起点的路径为0
-    node[f].visit = true;
+    node[f].visit = true;       //访问过则置为true
 
     for (i = 1; i < this->vernum; i++)
 	{                           //计算剩余的顶点的最短路径
         int temp = 0;           //temp用于保存当前node数组中最小的那个下标
         int min = MAX_VALUE;    //min记录的当前的最小值
         for (j = 0; j < this->vernum; j++)
-		{
+		{                       //找到最小值的下标
             if (!node[j].visit && node[j].value < min)
 			{
                 min = node[j].value;
