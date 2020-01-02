@@ -4,7 +4,7 @@
 //创建图
 void Graph::Create_graph()
 {
-	ifstream in("dijkstra.txt");
+	ifstream in("dijkstra.txt");              //打开文件dijkstra.txt
 	int vernum,edge;
     in >> vernum >> edge;                     //文件录入信息
     this->vernum = vernum;                    //初始化顶点数和边数
@@ -33,5 +33,5 @@ void Graph::Create_graph()
 	{
         node[i].router = "r" + to_string(i + 1);
     }
-    in.close();
+    in.close();                               //关闭文件
 }

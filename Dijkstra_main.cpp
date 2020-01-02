@@ -11,36 +11,36 @@ int main(void)
     {
     	case 1:
     	{
-    		system("cls");  //清除屏幕
-			graph.Dijkstra();
-			system("pause");//按任意键继续 
+    		system("cls");     //清除屏幕
+			graph.Dijkstra();  //调用算法主体输出路由表
+			system("pause");   //按任意键继续 
 			goto first;
 		}
 		case 2:
     	{
     		system("cls");
-    		graph.Del_edge();
+    		graph.Del_edge();  //删除边
 			system("pause");
 			goto first;
 		}
 		case 3:
     	{
     		system("cls");
-    		graph.Add_edge();
+    		graph.Add_edge();  //增加边
 			system("pause");
 			goto first;
 		}
 		case 4:
     	{
     		system("cls");
-    		graph.Del_vertex();
+    		graph.Del_vertex();//删除顶点
 			system("pause");
 			goto first;
 		}
 		case 5:
     	{
     		system("cls");
-    		graph.Add_vertex();
+    		graph.Add_vertex();//增加顶点
 			system("pause");
 			goto first;
 		}

@@ -31,7 +31,7 @@ void Graph::Del_vertex()
 	cout << "请输入您要删除的路由器：";
 	cin >> r1;
 	for (r2 = 0; r2 < this->vernum; r2++)
-	{
+	{                                   //找出删除的路由在邻接矩阵中对应的下标
 		if (r1.compare(node[r2].router) == 0)
 			break;
 	}
